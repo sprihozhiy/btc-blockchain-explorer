@@ -29,7 +29,7 @@ export default function BlockPage({ match }) {
       try {
         const res = await axios.get(URL);
         setBlockTransactions(res.data.data);
-        // console.log(blockTransactions);
+        console.log(blockTransactions);
       } catch (err) {
         console.log(err, "Something went wrong");
       }
