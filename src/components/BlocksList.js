@@ -6,23 +6,20 @@ import { currentUTCDate } from "../utilities/helpers";
 
 export default function BlocksList() {
   const [latestBlocks, setLatestBlocks] = useState([]);
-  const [isDataLoaded, setIsDataLoaded] = useState(false);
-  async function getData() {
-    const PROXY = `https://blockchain-test-proxy.herokuapp.com/`;
-    const URL = `${PROXY}https://chain.api.btc.com/v3/block/date/${currentUTCDate()}`;
-    try {
-      const res = await axios.get(URL);
-      setLatestBlocks(res.data.data);
-      setIsDataLoaded(true);
-    } catch (err) {
-      console.log(err, "Something went wrong");
-    }
-  }
 
   useEffect(() => {
+    async function getData() {
+      const PROXY = `https://blockchain-test-proxy.herokuapp.com/`;
+      const URL = `${PROXY}https://chain.api.btc.com/v3/block/date/${currentUTCDate()}`;
+      try {
+        const res = await axios.get(URL);
+        setLatestBlocks(res.data.data);
+      } catch (err) {
+        console.log(err, "Something went wrong");
+      }
+    }
     getData();
-    //eslint-disable-next-line
-  }, [isDataLoaded]);
+  }, []);
 
   return (
     <div className="BlockList">
@@ -48,7 +45,7 @@ export default function BlocksList() {
                 key={block.height}
                 height={block.height}
                 timestamp={block.timestamp}
-                transactions={block.transactions}
+                transactions={block.tx_count}
                 size={block.size}
                 weight={block.weight}
               />
@@ -56,7 +53,7 @@ export default function BlocksList() {
           )}
         </tbody>
       </table>
-      <button onClick={getData}>click</button>
+      {/* <button onClick={getData}>click</button> */}
     </div>
   );
 }
