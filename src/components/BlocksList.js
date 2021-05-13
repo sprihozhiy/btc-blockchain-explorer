@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import BlockListItem from "./BlocksListItem";
 
+import { PROXY } from "../api/config";
 import { currentUTCDate } from "../utilities/helpers";
 
 export default function BlocksList() {
@@ -9,7 +10,6 @@ export default function BlocksList() {
 
   useEffect(() => {
     async function getData() {
-      const PROXY = `https://blockchain-test-proxy.herokuapp.com/`;
       const URL = `${PROXY}https://chain.api.btc.com/v3/block/date/${currentUTCDate()}`;
       try {
         const res = await axios.get(URL);
@@ -53,7 +53,6 @@ export default function BlocksList() {
           )}
         </tbody>
       </table>
-      {/* <button onClick={getData}>click</button> */}
     </div>
   );
 }

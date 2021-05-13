@@ -8,8 +8,8 @@ import "./App.scss";
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <Router>
+        <Navbar />
         <Route exact path="/" component={BlockList} />
         <Route path="/block/:blockHeight" component={BlockPage} />
       </Router>

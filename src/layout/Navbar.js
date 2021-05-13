@@ -1,4 +1,5 @@
 import React from "react";
+import SearchBlock from "../components/SearchBlock";
 
 export default function Navbar() {
   return (
@@ -7,8 +8,7 @@ export default function Navbar() {
         Bitcoin Explorer
       </a>
       <div className="Navbar-Search">
-        <input type="text" />
-        <button>Search</button>
+        <SearchBlock />
       </div>
     </div>
   );
