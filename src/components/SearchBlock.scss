@@ -13,6 +13,10 @@
     padding: 1rem 0.5rem;
     border-radius: 4px 0 0 4px;
     width: 75%;
+    &:focus {
+      color: $textPrimary;
+      outline: none;
+    }
     &::placeholder {
       color: $textSecondary;
     }
@@ -22,6 +26,7 @@
     border: 1px solid $primary;
     padding: 1rem;
     border-radius: 0 4px 4px 0;
+    cursor: pointer;
     img {
       width: 0.7rem;
       height: auto;

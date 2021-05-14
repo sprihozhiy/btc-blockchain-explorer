@@ -11,3 +11,7 @@ export function unixToDate(timestamp) {
   const utc_timestamp = date.toLocaleString("en-US", { timeZone: "PST" });
   return utc_timestamp;
 }
+
+export function makeStringShort(str) {
+  return `${str.slice(0, 10)}...`;
+}
