@@ -21,6 +21,9 @@
       }
     }
   }
+  .padding-left {
+    @extend %padding-left;
+  }
 }
 
 @media only screen and (max-width: 760px),
@@ -69,10 +72,8 @@
       content: "Weight";
     }
 
-    .App {
-      .padding-left {
-        padding-left: 0;
-      }
+    .padding-left {
+      padding-left: 0;
     }
   }
 }

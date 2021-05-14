@@ -39,7 +39,9 @@ export default function BlocksList() {
         <tbody>
           {latestBlocks.length === 0 ? (
             <tr>
-              <td colSpan="3">Loading...</td>
+              <td colSpan="3" className="loading">
+                Loading...
+              </td>
             </tr>
           ) : (
             latestBlocks.map((block) => (

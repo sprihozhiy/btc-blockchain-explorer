@@ -8,8 +8,14 @@
     color: $textPrimary;
     font-size: 1.8rem;
     margin: 0;
-  } //helper css
-  .padding-left {
-    @extend %padding-left;
+  }
+
+  //helper css
+  // .padding-left {
+  //   @extend %padding-left;
+  // }
+  .loading {
+    text-align: center;
+    color: $textSecondary;
   }
 }

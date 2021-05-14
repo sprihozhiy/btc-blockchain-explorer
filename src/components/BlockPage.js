@@ -61,7 +61,9 @@ export default function BlockPage({ match }) {
             <tbody>
               {!isLoading ? (
                 <tr>
-                  <td colSpan="2">Loading...</td>
+                  <td colSpan="2" className="loading">
+                    Loading...
+                  </td>
                 </tr>
               ) : (
                 <>
@@ -103,7 +105,9 @@ export default function BlockPage({ match }) {
             <tbody>
               {!isLoading ? (
                 <tr>
-                  <td colSpan="2">Loading...</td>
+                  <td colSpan="2" className="loading">
+                    Loading...
+                  </td>
                 </tr>
               ) : (
                 <>
