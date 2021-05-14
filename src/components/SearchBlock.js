@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import { useHistory } from "react-router-dom";
+import "./SearchBlock.scss";
+import search from "../assets/img/search.svg";
 
 export default function SearchBlock() {
   const inputSearch = useRef(null);
@@ -7,14 +9,24 @@ export default function SearchBlock() {
 
   function handleSearch(e) {
     e.preventDefault();
-    history.push(`/block/${inputSearch.current.value}`);
+    const searchTerm = inputSearch.current.value;
+    searchTerm.length === 0
+      ? alert("Please, input block's height")
+      : history.push(`/block/${inputSearch.current.value}`);
+
     inputSearch.current.value = null;
   }
 
   return (
-    <>
-      <input type="text" ref={inputSearch} />
-      <button onClick={handleSearch}>Search</button>
-    </>
+    <div className="SearchBlock">
+      <input
+        type="text"
+        ref={inputSearch}
+        placeholder="Search blocks by height"
+      />
+      <button onClick={handleSearch}>
+        <img src={search} alt="search" />
+      </button>
+    </div>
   );
 }

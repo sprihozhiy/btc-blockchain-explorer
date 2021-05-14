@@ -1,0 +1,78 @@
+@import "../modules/base";
+
+.BlocksList {
+  background-color: $blocksBackground;
+  border-radius: 8px;
+  h3 {
+    padding: 2.4rem 0 1.9rem 3rem;
+  }
+  .BlocksList-Table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    thead {
+      font-weight: 500;
+      color: $textSecondary;
+      text-align: left;
+      tr {
+        th {
+          padding-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    left: 3rem;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  td {
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  td:nth-of-type(1):before {
+    content: "Height";
+  }
+  td:nth-of-type(2):before {
+    content: "Timestamp";
+  }
+  td:nth-of-type(3):before {
+    content: "Transactions";
+  }
+  td:nth-of-type(4):before {
+    content: "Size";
+  }
+  td:nth-of-type(5):before {
+    content: "Weight";
+  }
+
+  .App {
+    .BlocksList {
+      .padding-left {
+        padding-left: 0;
+      }
+    }
+  }
+}

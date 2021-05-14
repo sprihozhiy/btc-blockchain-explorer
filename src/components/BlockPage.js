@@ -15,27 +15,19 @@ export default function BlockPage({ match }) {
 
   useEffect(() => {
     async function getBlockData() {
-      const URL = `${PROXY}https://chain.api.btc.com/v3/block/${blockHeight}`;
+      const URL_BLOCK = `${PROXY}https://chain.api.btc.com/v3/block/${blockHeight}`;
+      const URL_BLOCK_TRANSACTIONS = `${PROXY}https://chain.api.btc.com/v3/block/${blockHeight}/tx`;
       try {
-        const res = await axios.get(URL);
-        setBlockData(res.data.data);
+        const resBlock = await axios.get(URL_BLOCK);
+        const resTransactions = await axios.get(URL_BLOCK_TRANSACTIONS);
+        setBlockData(resBlock.data.data);
+        setBlockTransactions(resTransactions.data.data);
         setIsLoading(true);
       } catch (err) {
         console.log(err, "Something went wrong");
       }
     }
-    async function getBlockTransactions() {
-      const URL = `${PROXY}https://chain.api.btc.com/v3/block/${blockHeight}/tx`;
-      try {
-        const res = await axios.get(URL);
-        setBlockTransactions(res.data.data);
-        console.log(blockTransactions);
-      } catch (err) {
-        console.log(err, "Something went wrong");
-      }
-    }
     getBlockData();
-    getBlockTransactions();
   }, [blockHeight]);
   return (
     <div>

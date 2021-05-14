@@ -1,0 +1,43 @@
+@import "../modules/base";
+.SearchBlock {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  input,
+  button {
+    box-sizing: content-box;
+  }
+  input {
+    background-color: $inputBackground;
+    border: 1px solid $border;
+    padding: 1rem 0.5rem;
+    border-radius: 4px 0 0 4px;
+    width: 75%;
+    &::placeholder {
+      color: $textSecondary;
+    }
+  }
+  button {
+    background-color: $primary;
+    border: 1px solid $primary;
+    padding: 1rem;
+    border-radius: 0 4px 4px 0;
+    img {
+      width: 0.7rem;
+      height: auto;
+    }
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  .SearchBlock {
+    input {
+      width: 80%;
+    }
+  }
+}

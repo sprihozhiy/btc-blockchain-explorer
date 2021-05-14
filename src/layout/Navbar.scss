@@ -1,0 +1,28 @@
+@import "../modules/base";
+
+.Navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 3rem;
+  .Navbar_Brand {
+    text-decoration: none;
+    color: $primary;
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+  .Navbar_Search {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  .Navbar {
+    .Navbar_Search {
+      margin-top: 1.5rem;
+      width: 100%;
+    }
+  }
+}

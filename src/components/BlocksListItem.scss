@@ -1,0 +1,14 @@
+@import "../modules/base";
+
+.BlocksListItem {
+  @extend %list-border;
+
+  td {
+    color: $textPrimary;
+    padding: 1.5rem 0;
+    a {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+}

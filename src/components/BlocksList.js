@@ -5,6 +5,8 @@ import BlockListItem from "./BlocksListItem";
 import { PROXY } from "../api/config";
 import { currentUTCDate } from "../utilities/helpers";
 
+import "./BlocksList.scss";
+
 export default function BlocksList() {
   const [latestBlocks, setLatestBlocks] = useState([]);
 
@@ -22,12 +24,12 @@ export default function BlocksList() {
   }, []);
 
   return (
-    <div className="BlockList">
+    <div className="BlocksList">
       <h3>Blocks</h3>
-      <table className="BlockList-Table">
+      <table className="BlocksList-Table">
         <thead>
           <tr>
-            <th>Height</th>
+            <th className="padding-left">Height</th>
             <th>Timestamp</th>
             <th>Transactions</th>
             <th>Size</th>

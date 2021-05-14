@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { unixToDate } from "../utilities/helpers";
 
+import "./BlocksListItem.scss";
+
 export default function BlocksListItem(props) {
   return (
-    <tr>
-      <td>
+    <tr className="BlocksListItem">
+      <td className="padding-left">
         <Link to={`/block/${props.height}`}>{props.height}</Link>
       </td>
       <td>{unixToDate(props.timestamp)}</td>

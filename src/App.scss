@@ -1,1 +1,15 @@
+@import "./modules/base";
 
+.App {
+  padding: 0 8%;
+  display: flex;
+  flex-direction: column;
+  h3 {
+    color: $textPrimary;
+    font-size: 1.8rem;
+    margin: 0;
+  } //helper css
+  .padding-left {
+    @extend %padding-left;
+  }
+}

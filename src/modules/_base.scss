@@ -1,0 +1,17 @@
+$background: #12141d;
+$blocksBackground: #1e2029;
+$textPrimary: #fff;
+$textSecondary: #78838e;
+$primary: #377dff;
+$secondary: #37cdff;
+$border: #39434e;
+$inputBackground: #0a0b11;
+
+%list-border {
+  border-bottom: 1px solid $border;
+  border-top: 1px solid $border;
+}
+
+%padding-left {
+  padding-left: 3rem;
+}
