@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import { PROXY } from "../api/config";
+import { API, PROXY } from "../api/config";
 import { unixToDate, makeStringShort } from "../utilities/helpers";
 
 import "./BlockPage.scss";
@@ -18,8 +18,8 @@ export default function BlockPage({ match }) {
 
   useEffect(() => {
     async function getBlockData() {
-      const URL_BLOCK = `${PROXY}https://chain.api.btc.com/v3/block/${blockHeight}`;
-      const URL_BLOCK_TRANSACTIONS = `${PROXY}https://chain.api.btc.com/v3/block/${blockHeight}/tx`;
+      const URL_BLOCK = `${PROXY}/${API}/${blockHeight}`;
+      const URL_BLOCK_TRANSACTIONS = `${PROXY}/${API}/${blockHeight}/tx`;
       try {
         const resBlock = await axios.get(URL_BLOCK);
         const resTransactions = await axios.get(URL_BLOCK_TRANSACTIONS);

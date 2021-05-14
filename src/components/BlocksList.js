@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import BlockListItem from "./BlocksListItem";
 
-import { PROXY } from "../api/config";
+import { API, PROXY } from "../api/config";
 import { currentUTCDate } from "../utilities/helpers";
 
 import "./BlocksList.scss";
@@ -12,7 +12,7 @@ export default function BlocksList() {
 
   useEffect(() => {
     async function getData() {
-      const URL = `${PROXY}https://chain.api.btc.com/v3/block/date/${currentUTCDate()}`;
+      const URL = `${PROXY}/${API}/date/${currentUTCDate()}`;
       try {
         const res = await axios.get(URL);
         setLatestBlocks(res.data.data);
